@@ -41,7 +41,7 @@ class GridViewController: UIViewController,UICollectionViewDelegate,UICollection
     //MARK: CollectionViewFunctions
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        nextViewController.titlevalue = Arr[indexPath.row].title
+        nextViewController.titlevalue = Arr[indexPath.row].title_long
         nextViewController.ratingvalue = "Rating: \(Arr[indexPath.row].rating ?? "")"
         nextViewController.genere = "Genere: \(Arr[indexPath.row].genres ?? "")"
         nextViewController.summary = "Summary: \n\(Arr[indexPath.row].summary ?? "")"
@@ -62,8 +62,13 @@ class GridViewController: UIViewController,UICollectionViewDelegate,UICollection
         let ImageURl = "https://blogswizards.com/mobile_app_assignment/\(URl)"
      //   print(ImageURl)
         cell.imgView.sd_setImage(with: URL(string: ImageURl), placeholderImage: UIImage(named: "placeholder"))
+        cell.backgroundColor = UIColor.white
+        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.borderWidth = 2
+        cell.layer.cornerRadius = 10
+        cell.clipsToBounds = true
         return cell
     }
-    
+   
     
 }

@@ -41,7 +41,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        nextViewController.titlevalue = Arr[indexPath.row].title
+        nextViewController.titlevalue = Arr[indexPath.row].title_long
         nextViewController.ratingvalue = "Rating: \(Arr[indexPath.row].rating ?? "")"
         nextViewController.genere = "Genere: \(Arr[indexPath.row].genres ?? "")"
         nextViewController.summary = "Summary: \n\(Arr[indexPath.row].summary ?? "")"
